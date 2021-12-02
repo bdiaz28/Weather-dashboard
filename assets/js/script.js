@@ -14,7 +14,7 @@ button.addEventListener('click',function(){
         console.log(data)
 
         name.innerHTML =nameValue
-       
+       temp.innerHTML = tempValue
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=d2dda80a2efc7b2c45dfb062aa425497`)
         .then(response => response.json())
@@ -60,83 +60,4 @@ button.addEventListener('click',function(){
 })
 })
     })
-
-// var cityFormEl = document.querySelector("#city-form");
-// var cityListEl = document.querySelector("#list-city");
-// var cityIdCounter = 0;
-// var cities = [];
-
-
-// var cityFormHandler = function(event) {
-//     event.preventDefault();
-//     var cityName = document.querySelector("input[name='city-name']").value;
-
-//     if(!cityName) {
-//         alert("You forgot to pick a city!");
-//         return false;
-//     };
-
-//     var cityDataObj = {
-//         name: cityName
-//     };
-
-//     createCityEl(cityDataObj)
-//   };
-
-//   var createCityEl = function (cityDataObj){
-//     var citySearchEl = document.createElement('li');
-//     citySearchEl.className = "city-search";
-
-//     citySearchEl.setAttribute("data-city-id", cityIdCounter);
-
-//     var cityInfoEl = document.createElement("div");
-//     cityInfoEl.className = "city-info";
-//     cityInfoEl.innerHTML = "<h6 class='city'>" + cityDataObj.name;
-//     citySearchEl.appendChild(cityInfoEl);
-
-//     cityFormEl.appendChild(citySearchEl);
-
-//     cityDataObj.id = cityIdCounter;
-
-//     cities.push(cityDataObj);
-
-//     cityIdCounter++;
-//   };
-
-
-// cityFormEl.addEventListener("submit", cityFormHandler);
-
-// var getCityWeather = function(weather) {
-//     var apiURL = "http://api.openweathermap.org/data/2.5/box/city?bbox={bbox}&appid={d2dda80a2efc7b2c45dfb062aa425497}" + weather;
-    
-//     fetch(apiURL)
-//         .then(function(response) {
-//             if(response.ok) {
-//             console.log(response);
-//                 response.json().then(function(data){
-//                     console.log(data);
-//                     displayWeather(data, city);
-//                 });
-//             } else {
-//                 alert("Error: " + response.statusText);
-//              }
-//             })
-//             .catch(function(error){
-//                 alert("Unable to connect to Open Weather Map");
-//             });
-//         };
-    
-//     var displayWeather = function(city, citySearched){
-
-//         citySearched.querySelector("h6.city-name").textContent = cityNameInput;
-
-
-//         for (var i = 0; i < cities.length; i++) {
-//             if (cities[i].id === parseInt(cityId)) {
-//               cities[i].name = cityNameInput;
-//         }
-//     }};
-
-
-
 
