@@ -1,22 +1,24 @@
 
+var mykey = config.MY_KEY;
+var secretkey = config.SECRET_KEY;
 var button = document.querySelector('.button')
-var inputValue = document.querySelector('.inputValue')
+var city = document.querySelector('.city')
 var name = document.querySelector('.name');
 var temp = document.querySelector('.temp');
 var display = document.querySelector('.display');
 
 button.addEventListener('click',function(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=d2dda80a2efc7b2c45dfb062aa425497')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&appid=mykey')
     .then(response => response.json())
     .then(data => {
-        var nameValue = data['name'];
-        var tempValue = data['main']['temp'];
+        var name = data['name'];
+        var temp = data['main']['temp'];
         console.log(data)
 
-        name.innerHTML =nameValue
-       temp.innerHTML = tempValue
+        name.innerHTML = name
+       temp.innerHTML = temp
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=d2dda80a2efc7b2c45dfb062aa425497`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=mykey`)
         .then(response => response.json())
         .then(data => {
             console.log(data)

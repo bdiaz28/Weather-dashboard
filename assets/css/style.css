@@ -4,7 +4,7 @@
     position: sticky;
 };
 
-.city-searched {
+.city {
     list-style-type: none; 
     border: 1px solid #ddd; /* Add a thin border to each list item */
     margin-top: -1px; /* Prevent double borders */
