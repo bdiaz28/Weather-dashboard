@@ -8,7 +8,7 @@ var temp = document.querySelector('.temp');
 var display = document.querySelector('.display');
 
 button.addEventListener('click',function(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&appid=mykey')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&appid= + mykey')
     .then(response => response.json())
     .then(data => {
         var name = data['name'];
@@ -18,7 +18,7 @@ button.addEventListener('click',function(){
         name.innerHTML = name
        temp.innerHTML = temp
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=mykey`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid= + mykey`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
