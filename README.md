@@ -21,6 +21,10 @@
 - WHEN I click on a city in the search history
 - THEN I am again presented with current and future conditions for that city
 
+### Technologies Used
+- Open Weather API
+- bootstrap
+
 ### Future Developments
 - update styling
 - add local storage
